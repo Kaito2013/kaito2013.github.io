@@ -69,6 +69,9 @@ Built with a focus on speed, aesthetics, accessibility, and zero-runtime bloat, 
 | **Interactivity & Logic** | Modern Vanilla JavaScript (ES6+, zero heavy framework dependencies) |
 | **Hosting & CI/CD** | GitHub Pages, Git |
 
+> [!NOTE]
+> **Architectural Decision (Zero-Build Philosophy):** Tailwind CSS is loaded via CDN to preserve the zero-build-step architecture, ensuring instantaneous deployment, zero node_modules dependencies, and effortless editing directly in the browser or any lightweight editor.
+
 ---
 
 ## 📁 Project Structure
