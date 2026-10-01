@@ -1,16 +1,870 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Randy Minh — Senior Full-Stack & Mobile Software Engineer</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Randy Minh — Senior Full-Stack & Mobile Software Engineer">
+  <meta name="description" content="Randy Minh - Senior Full-Stack & Mobile Software Engineer chuyên kiến tạo hệ thống backend hiệu năng cao (Go, Node.js, Python, Laravel) và ứng dụng di động đa nền tảng Flutter.">
+  <meta name="keywords" content="Randy Minh, Kaito2013, Senior Software Engineer, Full-Stack Engineer, Mobile Developer, Flutter, Golang, Node.js, Python, Laravel, PostgreSQL, Redis, Docker, CI/CD">
+  <meta name="author" content="Randy Minh">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kaito2013.github.io/">
+  <meta property="og:title" content="Randy Minh — Senior Full-Stack & Mobile Software Engineer">
+  <meta property="og:description" content="Kỹ sư phần mềm đam mê kiến tạo hệ thống backend hiệu năng cao, ổn định và các ứng dụng di động đa nền tảng mượt mà.">
+  <meta property="og:image" content="https://github.com/Kaito2013.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://kaito2013.github.io/">
+  <meta name="twitter:title" content="Randy Minh — Senior Full-Stack & Mobile Software Engineer">
+  <meta name="twitter:description" content="Kỹ sư phần mềm đam mê kiến tạo hệ thống backend hiệu năng cao, ổn định và các ứng dụng di động đa nền tảng mượt mà.">
+  <meta name="twitter:image" content="https://github.com/Kaito2013.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              blue: '#3b82f6',
+              cyan: '#06b6d4',
+              green: '#22c55e',
+            },
+            dark: {
+              bg: '#09090b',
+              subtle: '#121215',
+              card: '#18181b',
+              border: '#27272a',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Design System Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Main Application Script (Deferred) -->
+  <script defer src="assets/js/main.js"></script>
 </head>
-<body>
-  <div id="app">
-    <h1>Randy Minh</h1>
-    <p>Personal profile & portfolio</p>
-  </div>
-  <script src="assets/js/main.js"></script>
+<body class="selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Header / Sticky Navigation
+       ========================================================================= -->
+  <header class="glass-header sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <!-- Logo & Status Indicator -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <a href="#about" class="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-1" aria-label="Randy Minh - Trang chủ">
+            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white font-mono font-bold text-sm sm:text-base shadow-sm group-hover:scale-105 transition-transform">
+              RM
+            </span>
+            <span class="font-bold text-base sm:text-lg tracking-tight font-mono text-zinc-900 dark:text-zinc-100 group-hover:text-blue-500 transition-colors">
+              randy<span class="text-blue-500">.</span>minh
+            </span>
+          </a>
+
+          <!-- Live Availability Status Badge -->
+          <div class="hidden sm:inline-flex badge-pill items-center gap-2 py-1 px-2.5">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400">Available for projects</span>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Điều hướng chính">
+          <a href="#about" class="px-3 py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors">Giới thiệu</a>
+          <a href="#skills" class="px-3 py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors">Kỹ năng</a>
+          <a href="#projects" class="px-3 py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors">Dự án</a>
+          <a href="#experience" class="px-3 py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors">Kinh nghiệm</a>
+          <a href="#contact" class="px-3 py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 rounded-lg transition-colors">Liên hệ</a>
+        </nav>
+
+        <!-- Right Side Controls (Theme Toggle & CTA Button) -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Theme Switcher Button -->
+          <button id="theme-toggle" type="button" class="p-2 sm:p-2.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Chuyển đổi giao diện sáng/tối">
+            <span id="theme-toggle-icon" class="flex items-center justify-center">
+              <i data-lucide="moon" class="w-5 h-5"></i>
+            </span>
+          </button>
+
+          <!-- Desktop Quick CTA -->
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-500 shadow-sm shadow-blue-500/20 hover:shadow-blue-500/30 transition-all">
+            <span>Get In Touch</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button -->
+          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobile-menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-md px-4 pt-3 pb-5 space-y-2 transition-all">
+      <div class="sm:hidden mb-3">
+        <div class="badge-pill inline-flex items-center gap-2 py-1 px-3">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400">Available for projects</span>
+        </div>
+      </div>
+      <nav class="flex flex-col space-y-1" aria-label="Điều hướng mobile">
+        <a href="#about" class="block px-3 py-2 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors">Giới thiệu</a>
+        <a href="#skills" class="block px-3 py-2 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors">Kỹ năng</a>
+        <a href="#projects" class="block px-3 py-2 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors">Dự án</a>
+        <a href="#experience" class="block px-3 py-2 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors">Kinh nghiệm</a>
+        <a href="#contact" class="block px-3 py-2 text-base font-medium rounded-lg text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors">Liên hệ</a>
+      </nav>
+      <div class="pt-3 border-t border-zinc-200 dark:border-zinc-800">
+        <a href="#contact" class="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-500 shadow-sm transition-all">
+          <span>Get In Touch</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Content Container
+       ========================================================================= -->
+  <main>
+
+    <!-- =======================================================================
+         2. Hero Section (#about)
+         ======================================================================= -->
+    <section id="about" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <!-- Ambient Dot Background Pattern -->
+      <div class="absolute inset-0 bg-dot-pattern radial-mask-top pointer-events-none opacity-50 dark:opacity-40" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-8 flex flex-col items-start text-left">
+            
+            <!-- Professional Badge -->
+            <div class="badge-pill inline-flex items-center gap-2 py-1 px-3 mb-6 bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400">
+              <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+              <span class="text-xs font-semibold tracking-wide uppercase">Senior Full-Stack &amp; Mobile Engineer</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-tight mb-6 text-zinc-900 dark:text-zinc-100">
+              Hi, I'm <span class="text-gradient-blue">Randy Minh</span>
+            </h1>
+
+            <!-- Professional Subhead & Bio -->
+            <p class="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 font-medium leading-relaxed mb-6 max-w-2xl">
+              Kỹ sư phần mềm đam mê kiến tạo hệ thống backend hiệu năng cao, ổn định và các ứng dụng di động đa nền tảng mượt mà. Chuyên giải quyết các bài toán kỹ thuật phức tạp bằng giải pháp tinh gọn, tối ưu và mở rộng tốt.
+            </p>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 w-full sm:w-auto">
+              <!-- Primary CTA: Email Contact -->
+              <a href="mailto:randyminh90@gmail.com" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-blue-600 hover:bg-blue-500 shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Liên hệ ngay</span>
+              </a>
+
+              <!-- Secondary CTA: GitHub Profile -->
+              <a href="https://github.com/Kaito2013" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800/80 dark:hover:bg-zinc-800 border border-zinc-300/80 dark:border-zinc-700/80 transition-all focus:outline-none focus:ring-2 focus:ring-zinc-400">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub Profile</span>
+              </a>
+
+              <!-- Tertiary CTA: Facebook Profile -->
+              <a href="https://www.facebook.com/kaito.code/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800/80 dark:hover:bg-zinc-800 border border-zinc-300/80 dark:border-zinc-700/80 transition-all focus:outline-none focus:ring-2 focus:ring-zinc-400">
+                <i data-lucide="facebook" class="w-4 h-4"></i>
+                <span>Facebook</span>
+              </a>
+            </div>
+
+            <!-- Tech Focus Quick Indicators -->
+            <div class="flex flex-wrap items-center gap-2 pt-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <span class="font-semibold text-zinc-700 dark:text-zinc-300">Core Focus:</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">Go</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">Node.js</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">Flutter</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">PostgreSQL</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">Redis</span>
+              <span class="px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/60">Docker</span>
+            </div>
+
+          </div>
+
+          <!-- Hero Avatar & Graphic Visual -->
+          <div class="lg:col-span-4 flex justify-center lg:justify-end">
+            <div class="relative group">
+              <!-- Animated Glowing Halo -->
+              <div class="avatar-halo rounded-full p-1.5 transition-transform duration-500 group-hover:scale-105">
+                <img 
+                  src="https://github.com/Kaito2013.png" 
+                  alt="Randy Minh - Senior Full-Stack &amp; Mobile Software Engineer" 
+                  class="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full object-cover border-2 border-zinc-700/60 dark:border-zinc-700/60 shadow-2xl relative z-10"
+                  loading="eager"
+                  onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Randy+Minh&background=2563eb&color=fff&size=256';"
+                >
+              </div>
+
+              <!-- Floating Micro-Badge -->
+              <div class="absolute -bottom-2 -right-2 z-20 bento-card py-1.5 px-3 rounded-xl border border-zinc-300 dark:border-zinc-700 shadow-lg flex items-center gap-2 text-xs font-semibold bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="text-zinc-800 dark:text-zinc-200">5+ YOE Full-Stack</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Key Metrics Row -->
+        <div class="mt-16 md:mt-20 pt-10 border-t border-zinc-200 dark:border-zinc-800/80">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+            
+            <div class="bento-card card-glow p-5 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400 font-mono tracking-tight mb-1">
+                5+
+              </div>
+              <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-0.5">Năm kinh nghiệm</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400">Years Engineering Exp</div>
+            </div>
+
+            <div class="bento-card card-glow p-5 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-extrabold text-cyan-600 dark:text-cyan-400 font-mono tracking-tight mb-1">
+                10+
+              </div>
+              <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-0.5">Dự án Production</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400">Deployed Systems &amp; Apps</div>
+            </div>
+
+            <div class="bento-card card-glow p-5 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tracking-tight mb-1">
+                99.9%
+              </div>
+              <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-0.5">Độ tin cậy hệ thống</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400">System Reliability Focus</div>
+            </div>
+
+            <div class="bento-card card-glow p-5 rounded-2xl">
+              <div class="text-2xl sm:text-3xl font-extrabold text-purple-600 dark:text-purple-400 font-mono tracking-tight mb-1">
+                Multi-platform
+              </div>
+              <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-0.5">Backend &amp; Mobile</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400">Full-Stack Architecture</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. Tech Stack Bento Grid Section (#skills)
+         ======================================================================= -->
+    <section id="skills" class="relative py-20 md:py-28 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="badge-pill inline-flex items-center gap-2 py-1 px-3 mb-3 bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span class="text-xs font-semibold tracking-wide uppercase">Chuyên Môn Kỹ Thuật</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+            Nền tảng công nghệ &amp; Kiến trúc hệ thống
+          </h2>
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Hệ sinh thái công nghệ chọn lọc, tập trung vào khả năng mở rộng quy mô lớn, tính ổn định cao và trải nghiệm người dùng vượt trội.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout: 4 Main Pillars -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+          
+          <!-- Pillar 1: Backend & Distributed Systems (Large Span) -->
+          <div class="lg:col-span-6 bento-card card-glow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                  <i data-lucide="server" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">High Concurrency</span>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Backend &amp; Distributed Systems</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Thiết kế kiến trúc microservices và monolithic mở rộng, API RESTful / gRPC hiệu năng cao, xử lý đồng thời mượt mà với Clean Architecture và event-driven.
+              </p>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">Công nghệ cốt lõi:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Go (Golang)</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Node.js</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Python</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">PHP / Laravel</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">gRPC &amp; REST</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Microservices</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Mobile & Cross-Platform (Large Span) -->
+          <div class="lg:col-span-6 bento-card card-glow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
+                  <i data-lucide="smartphone" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">iOS &amp; Android</span>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Mobile &amp; Cross-Platform</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Phát triển ứng dụng di động đa nền tảng với Flutter, tối ưu hiệu năng mượt mà 60fps, kiến trúc quản lý trạng thái chuẩn mực, offline-first sync và animation sống động.
+              </p>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">Công nghệ cốt lõi:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Flutter</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Dart</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">iOS &amp; Android</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">State Management</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Offline-First Sync</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">60fps Smooth UI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Database & Caching -->
+          <div class="lg:col-span-6 bento-card card-glow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                  <i data-lucide="database" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Data Integrity</span>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Database &amp; Caching</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Thiết kế cơ sở dữ liệu quan hệ chuẩn hóa, tối ưu hóa index truy vấn phức tạp và triển khai tầng bộ nhớ đệm phân tán in-memory cực nhanh với Redis.
+              </p>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">Công nghệ cốt lõi:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">PostgreSQL</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Redis</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Query Optimization</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Sub-ms Cache</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Data Modeling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 4: DevOps & Tooling -->
+          <div class="lg:col-span-6 bento-card card-glow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                  <i data-lucide="terminal" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Automation &amp; CI/CD</span>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">DevOps &amp; Tooling</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Chuẩn hóa môi trường với containerization Docker, tự động hóa toàn bộ quy trình kiểm thử và phát hành với CI/CD, quản trị hạ tầng Linux production vững chắc.
+              </p>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">Công nghệ cốt lõi:</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Docker</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Git Workflows</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">CI/CD Pipelines</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Linux Server</span>
+                <span class="badge-pill font-mono font-medium text-xs py-1 px-2.5">Automation Scripts</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. Featured Projects Section (#projects)
+         ======================================================================= -->
+    <section id="projects" class="relative py-20 md:py-28 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="badge-pill inline-flex items-center gap-2 py-1 px-3 mb-3 bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400">
+            <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+            <span class="text-xs font-semibold tracking-wide uppercase">Dự Án Tiêu Biểu</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+            Giải pháp kỹ thuật &amp; Ứng dụng thực tế
+          </h2>
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Các dự án tiêu biểu được thiết kế và hiện thực hóa với tiêu chí hiệu năng cao, mở rộng tốt và kiến trúc rõ ràng.
+          </p>
+        </div>
+
+        <!-- Projects Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: High-Performance Microservices Backend -->
+          <article class="bento-card card-glow flex flex-col justify-between">
+            <div>
+              <!-- Project Category & Icon -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                  <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <span class="badge-pill text-xs font-mono">Backend &amp; Cloud</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2.5">
+                High-Performance Microservices Backend
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Hệ thống backend phân tán xử lý lưu lượng cao với kiến trúc microservices, cơ chế cache đa tầng bằng Redis và hàng đợi tin nhắn bất đồng bộ, đảm bảo tính sẵn sàng cao và độ trễ thấp.
+              </p>
+
+              <!-- Key Architecture Highlights -->
+              <div class="space-y-2 mb-6 text-xs text-zinc-600 dark:text-zinc-400">
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Khả năng xử lý 10,000+ RPS với độ trễ P99 &lt; 50ms</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Caching 2 cấp độ và Connection Pooling tối ưu</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>CI/CD pipeline tự động build Docker &amp; zero-downtime deploy</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer: Tech Stack Badges & Link -->
+            <div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Go</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Redis</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Docker</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">gRPC</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Cross-Platform Mobile Application -->
+          <article class="bento-card card-glow flex flex-col justify-between">
+            <div>
+              <!-- Project Category & Icon -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 dark:bg-cyan-500/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
+                  <i data-lucide="smartphone" class="w-5 h-5"></i>
+                </div>
+                <span class="badge-pill text-xs font-mono">Mobile &amp; Realtime</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2.5">
+                Cross-Platform Mobile Application
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Ứng dụng di động đa nền tảng (iOS &amp; Android) tối ưu trải nghiệm người dùng với kiến trúc offline-first, đồng bộ dữ liệu thời gian thực qua WebSockets và giao diện mượt mà 60fps.
+              </p>
+
+              <!-- Key Architecture Highlights -->
+              <div class="space-y-2 mb-6 text-xs text-zinc-600 dark:text-zinc-400">
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>50,000+ lượt tải và đánh giá người dùng 4.8/5.0</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Đồng bộ dữ liệu hai chiều tức thời (Conflict Resolution)</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Tích hợp thanh toán in-app và push notifications đa kênh</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer: Tech Stack Badges & Link -->
+            <div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Flutter</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Dart</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Node.js</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">WebSockets</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">REST API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Enterprise Web Application & Automation -->
+          <article class="bento-card card-glow flex flex-col justify-between">
+            <div>
+              <!-- Project Category & Icon -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span class="badge-pill text-xs font-mono">Enterprise &amp; Pipeline</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-2.5">
+                Enterprise Web Application &amp; Automation
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Nền tảng quản trị doanh nghiệp toàn diện tích hợp luồng xử lý dữ liệu tự động hóa bằng Python, phân quyền RBAC chi tiết và báo cáo phân tích số liệu thời gian thực.
+              </p>
+
+              <!-- Key Architecture Highlights -->
+              <div class="space-y-2 mb-6 text-xs text-zinc-600 dark:text-zinc-400">
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Tự động hóa hơn 80% quy trình vận hành và báo cáo định kỳ</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Hệ thống phân quyền RBAC bảo mật cao nhiều cấp độ</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                  <span>Tích hợp đối tác thanh toán và xuất nhập dữ liệu lớn</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer: Tech Stack Badges & Link -->
+            <div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">PHP / Laravel</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Python</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Docker</span>
+                <span class="px-2 py-0.5 rounded text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">CI/CD</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. Career Experience Section (#experience)
+         ======================================================================= -->
+    <section id="experience" class="relative py-20 md:py-28 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="badge-pill inline-flex items-center gap-2 py-1 px-3 mb-3 bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+            <span class="text-xs font-semibold tracking-wide uppercase">Quá Trình Làm Việc</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+            Kinh nghiệm &amp; Dấu ấn sự nghiệp
+          </h2>
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Hành trình không ngừng làm chủ công nghệ, xây dựng hệ thống quy mô lớn và đồng hành cùng các sản phẩm phần mềm chất lượng.
+          </p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="relative border-l border-zinc-300 dark:border-zinc-800 ml-4 md:ml-6 pl-6 md:pl-10 space-y-12">
+          
+          <!-- Timeline Item 1 -->
+          <div class="relative group">
+            <!-- Timeline Marker Dot -->
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 border-blue-600 bg-white dark:bg-zinc-950 group-hover:scale-125 transition-transform" aria-hidden="true"></div>
+            
+            <div class="bento-card card-glow p-6">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-lg sm:text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  Senior Full-Stack &amp; Mobile Software Engineer
+                </h3>
+                <span class="badge-pill font-mono text-xs text-blue-600 dark:text-blue-400 font-semibold">2022 — Nay</span>
+              </div>
+              <p class="text-sm font-semibold text-zinc-600 dark:text-zinc-300 mb-3">Hệ thống phân tán &amp; Ứng dụng di động cao cấp</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Chủ trì thiết kế kiến trúc backend microservices bằng Go và Node.js, phát triển ứng dụng di động Flutter đa nền tảng cho hàng chục ngàn người dùng hoạt động. Tối ưu hóa cơ sở dữ liệu PostgreSQL, xây dựng caching Redis và thiết lập luồng CI/CD tự động hóa.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="badge-pill text-xs font-mono">Go</span>
+                <span class="badge-pill text-xs font-mono">Flutter</span>
+                <span class="badge-pill text-xs font-mono">PostgreSQL</span>
+                <span class="badge-pill text-xs font-mono">Redis</span>
+                <span class="badge-pill text-xs font-mono">Docker</span>
+                <span class="badge-pill text-xs font-mono">CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="relative group">
+            <!-- Timeline Marker Dot -->
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 border-cyan-500 bg-white dark:bg-zinc-950 group-hover:scale-125 transition-transform" aria-hidden="true"></div>
+            
+            <div class="bento-card card-glow p-6">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-lg sm:text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  Full-Stack Developer &amp; Backend Lead
+                </h3>
+                <span class="badge-pill font-mono text-xs text-cyan-600 dark:text-cyan-400 font-semibold">2020 — 2022</span>
+              </div>
+              <p class="text-sm font-semibold text-zinc-600 dark:text-zinc-300 mb-3">Enterprise Web Platforms &amp; API Services</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Phát triển hệ thống web enterprise với PHP / Laravel và Node.js. Thiết kế RESTful API quy chuẩn cho các đối tác tích hợp, xây dựng hệ thống hàng đợi tin nhắn và chuẩn hóa quy trình phân phối sản phẩm.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="badge-pill text-xs font-mono">Node.js</span>
+                <span class="badge-pill text-xs font-mono">PHP / Laravel</span>
+                <span class="badge-pill text-xs font-mono">PostgreSQL</span>
+                <span class="badge-pill text-xs font-mono">Redis</span>
+                <span class="badge-pill text-xs font-mono">Git Workflows</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="relative group">
+            <!-- Timeline Marker Dot -->
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 border-emerald-500 bg-white dark:bg-zinc-950 group-hover:scale-125 transition-transform" aria-hidden="true"></div>
+            
+            <div class="bento-card card-glow p-6">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-lg sm:text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  Software Engineer &amp; Mobile Developer
+                </h3>
+                <span class="badge-pill font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold">2018 — 2020</span>
+              </div>
+              <p class="text-sm font-semibold text-zinc-600 dark:text-zinc-300 mb-3">Cross-Platform Apps &amp; Backend Services</p>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                Xây dựng ứng dụng di động đa nền tảng đầu tay với Flutter và Dart, thiết kế mô hình dữ liệu quan hệ, tích hợp cổng thanh toán trực tuyến và phát triển các script tự động hóa bằng Python.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="badge-pill text-xs font-mono">Flutter</span>
+                <span class="badge-pill text-xs font-mono">Dart</span>
+                <span class="badge-pill text-xs font-mono">Python</span>
+                <span class="badge-pill text-xs font-mono">REST API</span>
+                <span class="badge-pill text-xs font-mono">Linux</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. Contact & Connect Section (#contact)
+         ======================================================================= -->
+    <section id="contact" class="relative py-20 md:py-28 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <div class="badge-pill inline-flex items-center gap-2 py-1 px-3 mb-3 bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span class="text-xs font-semibold tracking-wide uppercase">Kết Nối &amp; Hợp Tác</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+            Khởi đầu một dự án mới
+          </h2>
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Tôi luôn sẵn sàng trao đổi về các bài toán backend hiệu năng cao, ứng dụng di động đa nền tảng hoặc cơ hội hợp tác kỹ thuật lâu dài.
+          </p>
+        </div>
+
+        <!-- Contact Main Bento Card -->
+        <div class="bento-card card-glow p-8 sm:p-10 mb-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <h3 class="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">
+                Trao đổi trực tiếp qua Email
+              </h3>
+              <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Bạn có thể sao chép nhanh địa chỉ email để liên hệ hoặc gửi thư trực tiếp. Tôi sẽ phản hồi sớm nhất trong vòng 24 giờ.
+              </p>
+
+              <!-- One-Click Copy Email Box (Expected by Task 4) -->
+              <div class="flex flex-wrap items-center gap-3 p-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800">
+                <div class="flex items-center gap-2 px-3 py-1.5 text-zinc-500 dark:text-zinc-400">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span id="email-text" class="font-mono text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-100 select-all">randyminh90@gmail.com</span>
+                </div>
+                
+                <div class="relative has-tooltip ml-auto">
+                  <button id="copy-email-btn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium bg-blue-600 hover:bg-blue-500 text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Sao chép địa chỉ email vào clipboard">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                  <span id="copy-tooltip" class="tooltip" role="status" aria-live="polite">Đã sao chép!</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col gap-3">
+              <a href="mailto:randyminh90@gmail.com" class="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl font-medium text-white bg-blue-600 hover:bg-blue-500 shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Gửi email trực tiếp</span>
+              </a>
+              <p class="text-center text-xs text-zinc-500 dark:text-zinc-400">
+                Ưu tiên thư trao đổi công việc, tư vấn giải pháp hoặc hợp tác dự án.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Social Channels Showcase Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- GitHub Card -->
+          <a href="https://github.com/Kaito2013" target="_blank" rel="noopener noreferrer" class="bento-card card-glow p-6 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-900 dark:text-zinc-100 group-hover:scale-110 transition-transform">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </div>
+              <i data-lucide="external-link" class="w-4 h-4 text-zinc-400 group-hover:text-blue-500 transition-colors"></i>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1">Source Code &amp; Repos</div>
+              <div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-1">GitHub</div>
+              <div class="text-xs font-mono text-blue-600 dark:text-blue-400">@Kaito2013</div>
+            </div>
+          </a>
+
+          <!-- Facebook Card -->
+          <a href="https://www.facebook.com/kaito.code/" target="_blank" rel="noopener noreferrer" class="bento-card card-glow p-6 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </div>
+              <i data-lucide="external-link" class="w-4 h-4 text-zinc-400 group-hover:text-blue-500 transition-colors"></i>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1">Social Connection</div>
+              <div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-1">Facebook</div>
+              <div class="text-xs font-mono text-blue-600 dark:text-blue-400">kaito.code</div>
+            </div>
+          </a>
+
+          <!-- Email Direct Card -->
+          <a href="mailto:randyminh90@gmail.com" class="bento-card card-glow p-6 flex flex-col justify-between group">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-400 group-hover:text-emerald-500 transition-colors"></i>
+            </div>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-1">Inquiry &amp; Work</div>
+              <div class="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-1">Email Direct</div>
+              <div class="text-xs font-mono text-emerald-600 dark:text-emerald-400">randyminh90@gmail.com</div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       7. Footer Section
+       ========================================================================= -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left: Branding & Copyright -->
+        <div class="flex flex-col items-center md:items-start gap-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white font-mono font-bold text-xs">
+              RM
+            </span>
+            <span class="font-bold font-mono tracking-tight text-zinc-900 dark:text-zinc-100">
+              randy<span class="text-blue-500">.</span>minh
+            </span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            © 2026 Randy Minh. All rights reserved. Zero-build static architecture.
+          </p>
+        </div>
+
+        <!-- Center: Live Deployment Indicator -->
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+          <span>Hosted on GitHub Pages</span>
+        </div>
+
+        <!-- Right: Back To Top -->
+        <div class="flex items-center gap-4">
+          <a href="#about" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors" aria-label="Cuộn lên đầu trang">
+            <span>Về đầu trang</span>
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
